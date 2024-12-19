@@ -29,7 +29,34 @@ local bigFont = love.graphics.newFont(24)
 local updateString = ""
 local stuck = false
 
+local function recursivelyDelete(item)
+  if love.filesystem.getInfo(item, "directory") then
+    for _, child in ipairs( love.filesystem.getDirectoryItems( item )) do
+      local path = item .. '/' .. child
+      if love.filesystem.getRealDirectory(path) == love.filesystem.getSaveDirectory() then
+        recursivelyDelete(path)
+        love.filesystem.remove(path)
+      end
+    end
+  elseif love.filesystem.getInfo(item) then
+    if love.filesystem.getRealDirectory(item) == love.filesystem.getSaveDirectory() then
+      love.filesystem.remove(item)
+    end
+  end
+  if love.filesystem.getRealDirectory(item) == love.filesystem.getSaveDirectory() then
+    love.filesystem.remove(item)
+  end
+end
+
+
+local function clearUpdaterSaveDirectory()
+  -- just bomb everything from the save directory to ensure that the embedded version is used
+  recursivelyDelete("updater")
+end
+
+
 function love.load(args)
+  clearUpdaterSaveDirectory()
   loadingIndicator:setDrawPosition(love.graphics:getDimensions())
   loadingIndicator:setFont(bigFont)
 

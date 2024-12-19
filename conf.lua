@@ -1,5 +1,5 @@
 local externalstorage = true
-local identity = "Panel Attack"
+local identity = "Panel Attack AMDCrashRepro"
 
 if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
   require("lldebugger").start()

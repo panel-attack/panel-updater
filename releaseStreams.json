@@ -2,25 +2,15 @@
     "releaseStreams":
     [
         {
-            "name":"stable",
+            "name":"crash",
             "versioningType": "timestamp",
             "serverEndPoint":
             {
                 "type": "filesystem",
-                "url": "https://panelattack.com/downloads/updates/stable",
+                "url": "https://panelattack.com/downloads/updates/crashtest/",
                 "prefix":"panel-"
-            }
-        },
-        {
-            "name":"beta",
-            "versioningType": "timestamp",
-            "serverEndPoint":
-            {
-                "type": "filesystem",
-                "url": "https://panelattack.com/downloads/updates/beta",
-                "prefix":"panel-beta-"
             }
         }
     ],
-    "default": "stable"
+    "default": "crash"
 }
