@@ -13,7 +13,8 @@ return {
     '.gitignore',
     '.vscode',
     'https.so',
-    'https.dll'
+    'https.dll',
+    'https'
   },
   icon = 'icon.png', -- 256x256px PNG icon for game, will be converted for you
 
@@ -29,5 +30,10 @@ return {
   --  all = {}
   -- },
 
-  platforms = {'linux', 'windows', 'macos'} -- set if you only want to build for a specific platform
+  -- set if you only want to build for a specific platform
+  platforms = {
+    --'linux',
+    'windows',
+    --'macos'
+  }
 }
