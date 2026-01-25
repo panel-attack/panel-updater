@@ -12,7 +12,7 @@ local GameUpdater = {
   releaseThreads = {},
   onDownloadedCallbacks = {},
   state = GAME_UPDATER_STATES.idle,
-  version = semanticVersion.toVersion("1.2")
+  version = semanticVersion.toVersion("2.0")
 }
 
 function GameUpdater:onDownloaded(version)

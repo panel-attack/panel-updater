@@ -5,7 +5,7 @@ return {
   name = 'Panel Attack', -- name of the game for your executable
   developer = 'Panel Attack Devs', -- dev name used in metadata of the file
   --output = '../dev-build', -- output location for your game, defaults to $SAVE_DIRECTORY
-  version = '1.0', -- 'version' of your game, used to make a version folder in output
+  version = '2.0', -- 'version' of your game, used to make a version folder in output
   love = '12.0', -- version of LÖVE to use, must match github releases
   ignore = { -- folders/files to ignore in your project
     'updater/tests',
@@ -13,6 +13,8 @@ return {
     '.gitignore',
     '.vscode',
     'https',
+    'https.so',
+    'https.dll'
   },
   icon = 'icon.png', -- 256x256px PNG icon for game, will be converted for you
 
